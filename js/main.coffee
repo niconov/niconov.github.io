@@ -1,6 +1,9 @@
 ---
 ---
 
+# e = JQuery.Event 'click'
+# JQuery('body').trigger e
+
 class App
 	constructor: () ->
 		@snap = Snap("#canvas");
@@ -45,8 +48,16 @@ class App
 		group = @snap.g path, @circles[0],@circles[1]
 		@connections.push group
 
-	addCircles: ->
-		for i in [0..1]
+	removeCircles: (count) ->
+		if @circles.length >= 1
+			el = @circles[0]
+			el.remove()
+
+			@circles = @circles.splice count
+		else
+
+	addCircles: (count) ->
+		for i in [0..count-1]
 			pos = @_getRandomPosition()
 			rad = @_randomBetween @minR, @maxR
 			circle = @snap.circle pos.x, pos.y, rad
@@ -118,21 +129,23 @@ window.onresize = ->
 	@app.createBox()
 window.onload = ->
 	@app = new App
-	app.addCircles()
-	# app.addConnections()
-	aaaa()
-	animation = (e) ->
+	app.addCircles 2
+
+	animation = (e, TIMING) ->
 		pos = app._getRandomPosition()
 		attrs =
 			cx: pos.x
 			cy: pos.y
 			r:	app._randomBetween app.maxR, app.minR
 		# e.animate attrs, 2000, mina.easeinout, ->
-		e.animate attrs, 2000, mina.linear	, ->
-			animation e
+		e.animate attrs, TIMING, mina.easeinout
 
 
-		#
+	$("#addCircles").click ->
+		app.addCircles 1
+
+	$("#removeCircles").click ->
+		app.removeCircles 1
 		# p =
 		# 	f:
 		# 		x: app.circles[0].node.cx.animVal.value
@@ -144,5 +157,8 @@ window.onload = ->
 		# pathat = d: "M#{p.f.x} #{p.f.y}L#{p.t.x} #{p.t.y}"
 		# path = app.connections[0].path
 		# path.animate pathat, 2000, mina.linear
-	app.circles.map (c) ->
-		animation c
+	TIMING = 500
+	setInterval (->
+		app.circles.map (c) ->
+			animation c, TIMING
+		), TIMING
