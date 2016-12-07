@@ -33,39 +33,51 @@ class App
 			y: 	@_randomBetween @box.height.min, @box.height.max
 
 	addConnections: ->
-		from = @circles[0]
-		# to = @circles[1].node.cx.
-		p =
-			f:
-				x: @circles[0].node.cx.animVal.value
-				y: @circles[0].node.cy.animVal.value
-			t:
-				x: @circles[1].node.cx.animVal.value
-				y: @circles[1].node.cy.animVal.value
-		path = @snap.path "M#{p.f.x} #{p.f.y}L#{p.t.x} #{p.t.y}"
-		path.attr
-			stroke: '#333'
-		group = @snap.g path, @circles[0],@circles[1]
-		@connections.push group
+		# from = @circles[0]
+		# # to = @circles[1].node.cx.
+		# p =
+		# 	f:
+		# 		x: @circles[0].node.cx.animVal.value
+		# 		y: @circles[0].node.cy.animVal.value
+		# 	t:
+		# 		x: @circles[1].node.cx.animVal.value
+		# 		y: @circles[1].node.cy.animVal.value
+		# path = @snap.path "M#{p.f.x} #{p.f.y}L#{p.t.x} #{p.t.y}"
+		# path.attr
+		# 	stroke: '#333'
+		# group = @snap.g path, @circles[0],@circles[1]
+		# @connections.push group
 
 	removeCircles: (count) ->
-		if @circles.length >= 1
-			el = @circles[0]
-			el.remove()
-
-			@circles = @circles.splice count
-		else
+		self = @
+		for i in [0..count-1]
+			if self.circles.length >= 1
+				# self.circles =
+				el = @circles[0]
+				@circles.shift()
+				attrs =
+					cx: 0
+					cy: 0
+				el.animate attrs, 200, mina.easeinout, ->
+					el.remove()
 
 	addCircles: (count) ->
+		self = @
 		for i in [0..count-1]
 			pos = @_getRandomPosition()
 			rad = @_randomBetween @minR, @maxR
-			circle = @snap.circle pos.x, pos.y, rad
+
+			circle = @snap.circle -50, -50, rad
 			circle.attr
 				fill: "#bada55"
 				stroke: "#000"
 				strokeWidth: 2
-			@circles.push circle
+			attrs =
+				cx: pos.x
+				cy: pos.y
+			self.circles.push circle
+			circle.animate attrs, 400, mina.easeinout
+
 
 
 
@@ -119,17 +131,12 @@ aaaa = ->
 
 
 
-
-
-
-
-
-
 window.onresize = ->
 	@app.createBox()
 window.onload = ->
 	@app = new App
-	app.addCircles 2
+
+	app.addCircles 3
 
 	animation = (e, TIMING) ->
 		pos = app._getRandomPosition()
@@ -137,7 +144,6 @@ window.onload = ->
 			cx: pos.x
 			cy: pos.y
 			r:	app._randomBetween app.maxR, app.minR
-		# e.animate attrs, 2000, mina.easeinout, ->
 		e.animate attrs, TIMING, mina.easeinout
 
 
