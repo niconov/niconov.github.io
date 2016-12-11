@@ -93,11 +93,18 @@ var bundle =
 	store.dispatch({ type: 'INCREMENT' });
 	// 1
 	store.dispatch({ type: 'INCREMENT' });
+	store.dispatch({ type: 'INCREMENT' });
 	// 2
+	store.dispatch({ type: 'DECREMENT' });
 	store.dispatch({ type: 'DECREMENT' });
 	// 1
 
-	window.onload = function () {};
+	window.onload = function () {
+	  console.log("AAA");
+	  console.log("AAA");
+	  console.log("AAA");
+	  console.log("AAA");
+	};
 
 /***/ },
 /* 1 */

@@ -6,12 +6,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 webpackConfig = {
 		context: __dirname,
 		entry: {
-				bundle: './app/app.js',
+				bundle: './app/app.jsx',
 				styles: './style/main.sass'
 		},
 		output: {
 				filename: '[name].js',
 				path: './build',
+				publicPath: "/build/",
 				library: '[name]'
 		},
 		resolve: {

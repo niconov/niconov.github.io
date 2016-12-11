@@ -1,4 +1,77 @@
-html body {
-  font-size: 20px; }
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);html, body {
+  height: 100%;
+  margin: 0; }
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  background-color: mediumseagreen; }
+
+header {
+  color: green; }
+
+footer {
+  width: 100%;
+  text-align: center; }
+  footer ul {
+    list-style: none; }
+
+svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -100; }
+
+footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -ms-flex-flow: column;
+      flex-flow: column;
+  position: absolute;
+  bottom: 0;
+  -ms-flex-align: center;
+      align-items: center; }
+  footer .controls {
+    width: 100%; }
+    footer .controls ul.list {
+      margin: 16px;
+      padding: 0;
+      list-style: none;
+      display: block; }
+      footer .controls ul.list li {
+        display: inline-block; }
+        footer .controls ul.list li a {
+          margin: 16px;
+          text-decoration: none;
+          color: white;
+          border-bottom: 1px solid #fff;
+          transition: all .15s linear;
+          filter: blur(1px); }
+        footer .controls ul.list li a:hover {
+          filter: blur(0px);
+          border-bottom: 1px solid springgreen; }
+  footer .about {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row;
+        flex-flow: row;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin: 0 8px 8px;
+    color: white; }
+    footer .about .owner {
+      margin: 16px; }
+    footer .about .divider {
+      height: 24px;
+      width: 1px;
+      background-color: white; }
+    footer .about .page {
+      margin: 16px; }
 
 /*# sourceMappingURL=styles.css.map*/
