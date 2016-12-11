@@ -47,6 +47,10 @@ var bundle =
 
 	"use strict";
 
+	window.onload = function () {
+		console.log("Test");
+	};
+
 /***/ }
 /******/ ]);
 //# sourceMappingURL=bundle.js.map
