@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --hot",
+    "start": "webpack-dev-server --inline",
     "build": "webpack -w"
   },
   "devDependencies": {
@@ -12,6 +12,16 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
-    "react-redux": "4.4.6"
+    "react-redux": "4.4.6",
+		"extract-text-webpack-plugin": "",
+		"autoprefixer-loader": "",
+		"sass-loader": "",
+		"babel-preset-stage-0": "",
+		"react": "",
+		"react-dom": "",
+		"node-sass": "",
+		"redux": "",
+		"webpack-dev-server": "",
+		"css-loader": ""
   }
 }

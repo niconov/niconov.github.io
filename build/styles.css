@@ -24,6 +24,12 @@ svg {
   width: 100%;
   z-index: -100; }
 
+button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: .5rem 1rem;
+  margin: 1rem; }
+
 footer {
   display: -ms-flexbox;
   display: flex;
