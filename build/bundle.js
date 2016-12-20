@@ -23309,21 +23309,7 @@ var bundle =
 			key: 'render',
 			value: function render() {
 				console.log(this.props);
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'ul',
-						null,
-						this.props.testStore.map(function (e, i) {
-							return _react2.default.createElement(
-								'li',
-								{ key: i },
-								e
-							);
-						})
-					)
-				);
+				return _react2.default.createElement('div', null);
 			}
 		}]);
 

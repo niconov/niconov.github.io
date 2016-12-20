@@ -6,11 +6,11 @@ class App extends Component {
 		console.log(this.props);
 		return (
 			<div>
-				<ul>
+				{/* <ul>
 					{this.props.testStore.map((e,i)=>
 						<li key={i}>{e}</li>
 					)}
-				</ul>
+				</ul> */}
 			</div>
 		);
 	}

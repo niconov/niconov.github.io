@@ -5,16 +5,11 @@
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 16px;
-  background-color: mediumseagreen; }
+  background-position: 0 -200px;
+  background-image: url("/images/Jupiter_Chariot.jpg"); }
 
 header {
   color: green; }
-
-footer {
-  width: 100%;
-  text-align: center; }
-  footer ul {
-    list-style: none; }
 
 svg {
   position: fixed;
@@ -31,6 +26,8 @@ button {
   margin: 1rem; }
 
 footer {
+  width: 100%;
+  text-align: center;
   display: -ms-flexbox;
   display: flex;
   -ms-flex: 1 1 auto;
@@ -53,7 +50,6 @@ footer {
         footer .controls ul.list li a {
           margin: 16px;
           text-decoration: none;
-          color: white;
           border-bottom: 1px solid #fff;
           transition: all .15s linear;
           filter: blur(1px); }
@@ -69,8 +65,10 @@ footer {
         align-items: center;
     -ms-flex-pack: center;
         justify-content: center;
-    margin: 0 8px 8px;
-    color: white; }
+    margin: 0 8px 16px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333; }
     footer .about .owner {
       margin: 16px; }
     footer .about .divider {
