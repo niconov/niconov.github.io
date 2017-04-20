@@ -1,19 +1,37 @@
 import "./google.js"
 
 
-let stack = {
-  technologies: {
-    Bundler: "Webpack",
-    Framework: 'Vue.js',
-    Style: "SASS",
-    JS: "Babel"
+let tech = [
+  {
+    type: 'Bundler',
+    name: 'Webpack'
+  },
+  {
+    type: 'MVVM',
+    name: 'Vue.js'
+  },
+  {
+    type: 'Style',
+    name: 'SASS'
+  },
+  {
+    type: 'JS',
+    name: 'Babel'
   }
-}
+]
 
+
+let contacts = [
+  {
+    name: "Telegram",
+    path: "http://t.me/ANiconov"
+  }
+]
 
 var app = new Vue({
   el: '#app',
   data: {
-    message: JSON.stringify(stack, null, 2)
+    tech: tech,
+    contacts: contacts
   }
 })

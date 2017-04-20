@@ -6,12 +6,25 @@
 	</head>
 	<body>
 
-    <div class="content">
+    <div class="content" id="app">
 
       <div class="block">
           <h2>self.about</h2>
-          <pre id="app">{{ message }}</pre>
+          <ul v-for="(item, index) in tech">
+            <li href="#"> {{ item.type }}: {{ item.name }} </a>
+          </ul>
       </div>
+
+      <div class="block">
+          <h2>self.contacts</h2>
+          <ul v-for="(item, index) in contacts">
+            <li>
+              <a  v-bind:href="item.path">{{ item.name }} </a>
+            </li>
+          </ul>
+
+      </div>
+
 
   		<footer>
   			<div class="about">
