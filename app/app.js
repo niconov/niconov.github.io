@@ -25,6 +25,10 @@ let contacts = [
   {
     name: "Telegram",
     path: "http://t.me/ANiconov"
+  },
+  {
+    name: "Instagram",
+    path: "http://Instagram.com/artemii.niconov"
   }
 ]
 

@@ -1,37 +1,27 @@
 html, body
   height: 100%
+  width: 100%
   margin: 0
 
 body
   font-family: 'Noto Sans', sans-serif
   font-size: 16px
-  background-position: center -200px
-  background-image: url("/images/Jupiter_Chariot.jpg")
-
-header
-  color: green
-
-svg
-  position: fixed
-  top: 0
-  left: 0
-  height: 100%
-  width: 100%
-  z-index: -100
 
 .content
   @include flexbox
   @include flex(1 1 auto)
   max-width: $main-width
+  min-height: 100%
   flex-flow: column
-  margin: $gutter auto
+  margin: 0 auto
   justify-content: center
 
   .block
     padding: $gutter
-    background-color: rgba($color-block-content, $alpha-block-content)
-    border: 1px solid $color-block-content
     margin-bottom: $gutter
 
-// .block
-//   width: $main-width
+
+    .contacts
+      text-align: right
+      font-size: 3rem
+
