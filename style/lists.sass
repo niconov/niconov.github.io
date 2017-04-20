@@ -1,9 +1,29 @@
 ul
   list-style: none
 
-ul.contacts-list
+.contacts-list
   text-align: right
   margin-right: .25*$gutter
-  a 
-  	font-weight: bold
-  	text-decoration: underline
+  width: 100%
+  // background-color: #ccc
+  @include flexbox
+  @include flex(1 1 auto)
+  flex-flow: column
+  .contact
+    @include flexbox
+    flex-flow: row
+    width: 100%
+    align-items: center
+
+    .contact-text
+      text-align: right 
+      color: #ddd
+      min-width: 200px 
+
+    .contact-link 
+      text-align: left
+      padding: .5*$gutter 
+      min-width: 100px 
+      // max-width: 200px 
+      font-weight: bold
+      text-decoration: underline

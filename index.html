@@ -9,18 +9,23 @@
 
       <div class="block">
 
-        <ul v-for="(item, index) in contacts" class="contacts-list">
-          <li>
-            <a v-bind:href="item.path">{{ item.name }} </a>
-          </li>
-        </ul>
+        <div class="contacts-list">
+          <div v-for="(item, index) in contacts" class="contact">
+            <div class="contact-text">
+              {{ item.text }}
+            </div>
+            <div class="contact-link">
+              <a v-bind:href="item.path">{{ item.name }} </a>
+            </div>
+          </div>
+        </div>
 
       </div>
 
 
   		<footer>
   			<div class="about">
-  				<div class="owner"> Artemiy </div>
+  				<div class="owner"> Артемий </div>
   			</div>
   		</footer>
     </div>
