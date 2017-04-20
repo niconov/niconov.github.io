@@ -22,11 +22,15 @@ svg
 .content
   @include flexbox
   @include flex(1 1 auto)
-  flex-flow: column
-  margin: 0 auto
   max-width: $main-width
+  flex-flow: column
+  margin: $gutter auto
   justify-content: center
-  // align-items: center
+
+  .block
+    padding: $gutter
+    background-color: rgba($color-block-content, $alpha-block-content)
+    border: 1px solid $color-block-content
 
 // .block
 //   width: $main-width
