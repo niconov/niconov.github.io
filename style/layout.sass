@@ -8,11 +8,6 @@ body
   background-position: 0 -200px
   background-image: url("/images/Jupiter_Chariot.jpg")
 
-  // @include flexbox
-  // @include flex(1 1 auto)
-  // flex-flow: column
-  // justify-content: space-between
-  // background: linear-gradient(45deg,#64AFC0 0,#35D8B3 100%)
 header
   color: green
 
@@ -23,3 +18,15 @@ svg
   height: 100%
   width: 100%
   z-index: -100
+
+.content
+  @include flexbox
+  @include flex(1 1 auto)
+  flex-flow: column
+  margin: 0 auto
+  max-width: $main-width
+  justify-content: center
+  // align-items: center
+
+// .block
+//   width: $main-width

@@ -8,20 +8,21 @@
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "coffee-loader": "^0.7.3",
     "react-redux": "^4.4.6",
     "webpack": "^1.14.0"
   },
   "dependencies": {
     "react-redux": "4.4.6",
-		"extract-text-webpack-plugin": "",
-		"autoprefixer-loader": "",
-		"sass-loader": "",
-		"babel-preset-stage-0": "",
-		"react": "",
-		"react-dom": "",
-		"node-sass": "",
-		"redux": "",
-		"webpack-dev-server": "",
-		"css-loader": ""
+    "extract-text-webpack-plugin": "",
+    "autoprefixer-loader": "",
+    "sass-loader": "",
+    "babel-preset-stage-0": "",
+    "react": "",
+    "react-dom": "",
+    "node-sass": "",
+    "redux": "",
+    "webpack-dev-server": "",
+    "css-loader": ""
   }
 }

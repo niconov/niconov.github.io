@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 webpackConfig = {
 		context: __dirname,
 		entry: {
-				bundle: './app/app.jsx',
+				bundle: './app/app.js',
 				styles: './style/main.sass'
 		},
 		output: {
@@ -22,7 +22,7 @@ webpackConfig = {
 		module: {
 				loaders: [
 						{
-								test: /\.jsx?$/,
+								test: /\.js?$/,
 								exclude: [/node_modules/],
 								loader: "babel-loader",
 								query: {
