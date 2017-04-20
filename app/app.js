@@ -1,3 +1,6 @@
+import "./google.js"
+
+
 let stack = {
   technologies: {
     Bundler: "Webpack",
