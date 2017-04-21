@@ -8,8 +8,7 @@ webpackConfig = {
 		context: __dirname,
 		entry: {
 				bundle: './app/app.js',
-				styles: './style/main.sass',
-				"index.html": "./index.html"
+				styles: './style/main.sass'
 		},
 		output: {
 				filename: '[name].js',
