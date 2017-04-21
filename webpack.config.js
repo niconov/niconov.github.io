@@ -1,7 +1,8 @@
 webpack = require('webpack');
 path = require('path');
+var fs = require('fs');
+var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 
 webpackConfig = {
 		context: __dirname,
@@ -57,3 +58,13 @@ webpackConfig = {
 		]
 };
 module.exports = webpackConfig;
+
+console.log("Compile Posts")
+let posts =  JSON.stringify( fs.readdirSync("./posts"));
+fs.writeFile("./posts.json", posts, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+});

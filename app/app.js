@@ -14,8 +14,34 @@ let contacts = [
 ]
 
 var app = new Vue({
-  el: '#app',
+  el: '#contacts',
   data: {
     contacts: contacts
+  }
+})
+
+var posts = []
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "./posts.json", false);
+
+
+xhr.onload = (e) => {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      posts = JSON.parse(xhr.responseText)
+    } else {
+      console.error(xhr.statusText);
+    }
+  }
+};
+xhr.onerror = (e) => {
+  console.error(xhr.statusText);
+};
+xhr.send();
+
+var posts = new Vue({
+  el: '#posts',
+  data: {
+    posts: posts
   }
 })

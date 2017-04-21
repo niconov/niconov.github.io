@@ -5,21 +5,26 @@
     <script src="https://unpkg.com/vue"></script>
 	</head>
 	<body>
-    <div class="content" id="app">
+    <div class="content" >
 
-      <div class="block">
-
+      <div class="block" id="contacts">
         <div class="contacts-list">
           <div v-for="(item, index) in contacts" class="contact">
-            <div class="contact-text">
-              {{ item.text }}
-            </div>
+            <div class="contact-text"> {{ item.text }} </div>
             <div class="contact-link">
               <a v-bind:href="item.path">{{ item.name }} </a>
             </div>
           </div>
         </div>
+      </div>
 
+
+      <div class="block" id="posts">
+        <div class="posts-list">
+          <div v-for="(item, index) in posts" class="contact">
+            <div class="contact-text"> {{ item}} </div>
+          </div>
+        </div>
       </div>
 
 
