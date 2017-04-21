@@ -1,3 +1,4 @@
+console.log(location.hostname)
 if (location.hostname === "localhost") {
 } else {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
