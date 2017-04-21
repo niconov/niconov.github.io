@@ -1,11 +1,55 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);html, body {
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);html, body {
   height: 100%;
   width: 100%;
   margin: 0; }
 
 body {
   font-family: 'Noto Sans', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  background: linear-gradient(20deg, #14213D, #222); }
+
+header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+  color: #FCA311;
+  z-index: -9999; }
+  header .name {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    font-family: "Permanent Marker", cursive;
+    font-size: 8rem;
+    height: 100%;
+    width: 100%;
+    -ms-flex-flow: row;
+        flex-flow: row;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    justify-content: center; }
+    header .name .firstname {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      display: inline-block;
+      left: 6rem; }
+    header .name .lastname {
+      -webkit-transform: rotate(-10deg);
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -o-transform: rotate(-10deg);
+      display: inline-block;
+      position: relative;
+      top: 4rem;
+      left: -8rem; }
 
 .content {
   display: -ms-flexbox;
@@ -16,9 +60,7 @@ body {
   min-height: 100%;
   -ms-flex-flow: column;
       flex-flow: column;
-  margin: 0 auto;
-  -ms-flex-pack: center;
-      justify-content: center; }
+  margin: 0 auto; }
   .content .block {
     padding: 16px;
     margin-bottom: 16px; }
@@ -83,14 +125,27 @@ footer {
       margin: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #800080;
+  color: #FCA311;
   display: inline-block;
   background-color: #fff;
   padding: 8px 32px; }
 
 a {
   text-decoration: none;
-  color: #333; }
+  color: #fff;
+  text-decoration: none; }
+
+a:link {
+  text-decoration: none; }
+
+a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+a:active {
+  text-decoration: underline; }
 
 ul {
   list-style: none; }
@@ -120,8 +175,6 @@ ul {
     .contacts-list .contact .contact-link {
       text-align: left;
       padding: 8px;
-      min-width: 100px;
-      font-weight: bold;
-      text-decoration: underline; }
+      min-width: 100px; }
 
 /*# sourceMappingURL=styles.css.map*/
