@@ -5,8 +5,19 @@
     <script src="https://unpkg.com/vue"></script>
 	</head>
 	<body>
+
+    <header>
+      <div class="name">Artemiy Nikonov</div>
+    </header>
+    
     <div class="content" >
 
+
+<!-- 
+      <div class="block" id="about">
+        
+      </div>
+ -->
       <div class="block" id="contacts">
         <div class="contacts-list">
           <div v-for="(item, index) in contacts" class="contact">
@@ -19,7 +30,7 @@
       </div>
 
 
-      <!-- <div class="block" id="posts">
+<!--       <div class="block" id="posts">
         <div class="posts-list">
           <div v-for="(item, index) in posts" class="contact">
             <div class="post-name" v-on:click="selected = item; show()" > {{ item }} </div>
@@ -29,14 +40,14 @@
             <p>  {{ post.text }}   </p>
           </div>
         </div>
-      </div> -->
+      </div>
+ -->
 
-
-  		<footer>
+  		<!--<footer> 
   			<div class="about">
   				<div class="owner"> Артемий </div>
   			</div>
-  		</footer>
+  		</footer> -->
     </div>
 
 		<script type="text/javascript" src="build/bundle.js"></script>
