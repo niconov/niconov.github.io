@@ -19,13 +19,17 @@
       </div>
 
 
-      <div class="block" id="posts">
+      <!-- <div class="block" id="posts">
         <div class="posts-list">
           <div v-for="(item, index) in posts" class="contact">
-            <div class="contact-text"> {{ item}} </div>
+            <div class="post-name" v-on:click="selected = item; show()" > {{ item }} </div>
+          </div>
+          <div class="post-selected" v-if="selected">
+            <h4> {{ post.header }} </h4>
+            <p>  {{ post.text }}   </p>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
   		<footer>

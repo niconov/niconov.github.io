@@ -47,6 +47,8 @@ var bundle =
 
 	"use strict";
 
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 	__webpack_require__(1);
 
 	var contacts = [{
@@ -60,9 +62,65 @@ var bundle =
 	}];
 
 	var app = new Vue({
-	  el: '#app',
+	  el: '#contacts',
 	  data: {
 	    contacts: contacts
+	  }
+	});
+
+	var xhr = new XMLHttpRequest();
+
+	var getJSONFile = function getJSONFile(path) {
+	  var response = {};
+	  xhr.open("GET", path, false);
+	  xhr.onload = function (e) {
+	    if (xhr.readyState === 4) {
+	      if (xhr.status === 200) {
+	        response = JSON.parse(xhr.responseText);
+	      } else {
+	        return xhr.status;
+	      }
+	    }
+	  };
+	  xhr.onerror = function (e) {
+	    return xhr.status;
+	  };
+	  xhr.send();
+	  return response;
+	};
+
+	var getPost = function getPost(post) {
+	  return getJSONFile("./posts/" + post);
+	};
+
+	var posts = new Vue({
+	  el: '#posts',
+	  data: {
+	    posts: getJSONFile("./posts.json"),
+	    selected: null,
+	    status: null,
+	    post: {
+	      header: null,
+	      text: null
+	    }
+	  },
+	  methods: {
+	    show: function show() {
+	      var post = getPost(this.selected);
+	      console.log(typeof post === "undefined" ? "undefined" : _typeof(post));
+	      if ((typeof post === "undefined" ? "undefined" : _typeof(post)) === "object") {
+	        if (post.text && post.header) {
+	          this.post.header = post.header;
+	          console.log(post.header);
+	          this.post.text = post.text;
+	        } else {
+	          this.selected = null;
+	        }
+	      } else {
+	        this.selected = null;
+	      }
+	      return post;
+	    }
 	  }
 		});
 

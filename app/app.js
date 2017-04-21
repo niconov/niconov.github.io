@@ -20,28 +20,61 @@ var app = new Vue({
   }
 })
 
-var posts = []
 var xhr = new XMLHttpRequest();
-xhr.open("GET", "./posts.json", false);
 
-
-xhr.onload = (e) => {
-  if (xhr.readyState === 4) {
-    if (xhr.status === 200) {
-      posts = JSON.parse(xhr.responseText)
-    } else {
-      console.error(xhr.statusText);
+var getJSONFile = (path) => {
+  var response = {}
+  xhr.open("GET", path, false);
+  xhr.onload = function(e) {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        response = JSON.parse(xhr.responseText)
+      } else {
+        return xhr.status;
+      }
     }
-  }
-};
-xhr.onerror = (e) => {
-  console.error(xhr.statusText);
-};
-xhr.send();
+  };
+  xhr.onerror = function(e){
+    return xhr.status;
+  };
+  xhr.send();
+  return response
+}
+
+
+var getPost = (post) => {
+  return getJSONFile("./posts/" + post)
+}
+
+
 
 var posts = new Vue({
   el: '#posts',
   data: {
-    posts: posts
+    posts: getJSONFile("./posts.json"),
+    selected: null,
+    status: null,
+    post: {
+      header: null,
+      text: null
+    }
+  },
+  methods: {
+    show: function() {
+      var post = getPost(this.selected)
+      console.log(typeof post );
+      if (typeof post === "object"){
+        if (post.text && post.header) {
+          this.post.header = post.header
+          console.log(post.header);
+          this.post.text = post.text
+        } else {
+          this.selected = null
+        }
+      } else {
+        this.selected = null
+      }
+      return post
+    }
   }
 })
