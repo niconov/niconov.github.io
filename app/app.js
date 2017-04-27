@@ -90,3 +90,24 @@ var posts = new Vue({
     }
   }
 })
+
+
+let primaryColor = "#ccc"
+// let primaryColor = "#FCA311"
+var draw = SVG('drawing')
+
+// var windowResize = function () {
+//   let windowWidth = window.innerWidth;
+//   let windowHeight = window.innerHeight;
+// }
+draw.size("100%", "100%")
+// draw.size(windowWidth, windowHeight)
+var circle = draw.circle(100)
+circle.attr({fill: 'rgba(0,0,0,0)' })
+circle.stroke({width: 1, color: primaryColor })
+circle.center("50%", "50%")
+circle.filter(function(add) {
+  add.gaussianBlur(1)
+})
+// window.onresize = windowResize
+// windowResize()
