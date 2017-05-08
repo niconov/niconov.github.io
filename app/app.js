@@ -22,6 +22,11 @@ let contacts = [
     name: "Instagram",
     path: "http://Instagram.com/artemii.niconov",
     text: "Фото"
+  },
+  {
+    name: "VK",
+    path: "vk.html",
+    text: ""
   }
 ]
 

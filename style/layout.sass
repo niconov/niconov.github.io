@@ -6,7 +6,6 @@ html, body
 body
   font-family: 'Noto Sans', sans-serif
   font-size: 16px
-  // background-color: $background-color
   background: linear-gradient(20deg, $background-color, #222)
 
 header
@@ -58,3 +57,38 @@ header
     .contacts
       text-align: right
       font-size: 3rem
+    .post
+      &
+        max-width: 600px
+        margin: 1*$gutter auto
+      h1.post-header
+        width: 100%
+        margin-top: 0
+        color: white 
+        padding: $gutter 2*$gutter
+        background-color: $invisible
+        box-sizing: border-box
+
+      .post-body
+        background-color: white
+        p:first-child
+          padding-top: $gutter
+        p
+          margin: 0
+          padding: 0 2*$gutter
+          padding-bottom: $gutter
+        p.formula
+          color: #444
+          text-align: center
+          font-style: italic 
+        blockquote
+          background-color: #ccc
+          width: 100%
+          margin: 0
+          box-sizing: border-box
+          padding: $gutter 2*$gutter 
+          p
+            padding: 0
+            padding-bottom: $gutter
+          p:first-child
+            padding-top: 0

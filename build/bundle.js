@@ -43,13 +43,24 @@ var bundle =
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	__webpack_require__(1);
+	// import "./google.js"
+
+	if (location.hostname === "localhost") {} else {
+	  (function (i, s, o, g, r, a, m) {
+	    i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+	      (i[r].q = i[r].q || []).push(arguments);
+	    }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+	  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+	  ga('create', 'UA-71368142-3', 'auto');
+	  ga('send', 'pageview');
+	}
 
 	var contacts = [{
 	  name: "Telegram",
@@ -59,6 +70,10 @@ var bundle =
 	  name: "Instagram",
 	  path: "http://Instagram.com/artemii.niconov",
 	  text: "Фото"
+	}, {
+	  name: "VK",
+	  path: "vk.html",
+	  text: ""
 	}];
 
 	var app = new Vue({
@@ -107,8 +122,8 @@ var bundle =
 	  methods: {
 	    show: function show() {
 	      var post = getPost(this.selected);
-	      console.log(typeof post === "undefined" ? "undefined" : _typeof(post));
-	      if ((typeof post === "undefined" ? "undefined" : _typeof(post)) === "object") {
+	      console.log(typeof post === 'undefined' ? 'undefined' : _typeof(post));
+	      if ((typeof post === 'undefined' ? 'undefined' : _typeof(post)) === "object") {
 	        if (post.text && post.header) {
 	          this.post.header = post.header;
 	          console.log(post.header);
@@ -122,24 +137,27 @@ var bundle =
 	      return post;
 	    }
 	  }
-		});
+	});
 
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
+	var primaryColor = "#ccc";
+	// let primaryColor = "#FCA311"
+	var draw = SVG('drawing');
 
-	'use strict';
-
-	if (location.hostname === "localhost") {} else {
-	  (function (i, s, o, g, r, a, m) {
-	    i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
-	      (i[r].q = i[r].q || []).push(arguments);
-	    }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
-	  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-	  ga('create', 'UA-71368142-3', 'auto');
-	  ga('send', 'pageview');
-	}
+	// var windowResize = function () {
+	//   let windowWidth = window.innerWidth;
+	//   let windowHeight = window.innerHeight;
+	// }
+	draw.size("100%", "100%");
+	// draw.size(windowWidth, windowHeight)
+	var circle = draw.circle(100);
+	circle.attr({ fill: 'rgba(0,0,0,0)' });
+	circle.stroke({ width: 1, color: primaryColor });
+	circle.center("50%", "50%");
+	circle.filter(function (add) {
+	  add.gaussianBlur(1);
+	});
+	// window.onresize = windowResize
+	// windowResize()
 
 /***/ }
 /******/ ]);

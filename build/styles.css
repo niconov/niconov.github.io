@@ -67,6 +67,39 @@ header {
     .content .block .contacts {
       text-align: right;
       font-size: 3rem; }
+    .content .block .post {
+      max-width: 600px;
+      margin: 16px auto; }
+    .content .block .post h1.post-header {
+      width: 100%;
+      margin-top: 0;
+      color: white;
+      padding: 16px 32px;
+      background-color: transparent;
+      box-sizing: border-box; }
+    .content .block .post .post-body {
+      background-color: white; }
+      .content .block .post .post-body p:first-child {
+        padding-top: 16px; }
+      .content .block .post .post-body p {
+        margin: 0;
+        padding: 0 32px;
+        padding-bottom: 16px; }
+      .content .block .post .post-body p.formula {
+        color: #444;
+        text-align: center;
+        font-style: italic; }
+      .content .block .post .post-body blockquote {
+        background-color: #ccc;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 16px 32px; }
+        .content .block .post .post-body blockquote p {
+          padding: 0;
+          padding-bottom: 16px; }
+        .content .block .post .post-body blockquote p:first-child {
+          padding-top: 0; }
 
 button {
   background-color: white;
@@ -128,7 +161,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #FCA311;
   display: inline-block;
   background-color: #fff;
-  padding: 8px 32px; }
+  padding: 16px 32px 0; }
+
+h1 {
+  font-size: 1.7rem; }
 
 a {
   text-decoration: none;
@@ -176,5 +212,18 @@ ul {
       text-align: left;
       padding: 8px;
       min-width: 100px; }
+
+nav {
+  position: fixed;
+  top: 16px;
+  left: 16px; }
+
+div#drawing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10; }
 
 /*# sourceMappingURL=styles.css.map*/
