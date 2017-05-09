@@ -72,9 +72,10 @@ header {
       margin: 16px auto; }
     .content .block .post h1.post-header {
       width: 100%;
-      margin-top: 0;
       color: white;
-      padding: 16px 32px;
+      margin-top: 0;
+      margin-bottom: .5rem;
+      padding: 16px 32px 0;
       background-color: transparent;
       box-sizing: border-box; }
     .content .block .post .post-body {
@@ -100,6 +101,11 @@ header {
           padding-bottom: 16px; }
         .content .block .post .post-body blockquote p:first-child {
           padding-top: 0; }
+      .content .block .post .post-body img {
+        height: 120px;
+        display: block;
+        margin: 16px auto;
+        padding-bottom: 16px; }
 
 button {
   background-color: white;
