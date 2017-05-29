@@ -27,6 +27,11 @@ let contacts = [
     name: "VK",
     path: "vk.html",
     text: ""
+  },
+  {
+    name: "Правила жизни",
+    path: "liferules.html",
+    text: ""
   }
 ]
 
